@@ -30,9 +30,11 @@ Questions:
    1. Only testOpenFordUpfits test pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
 5. SearchByDealerName
    1. Extend test to pass "query" as parameter or have is as variable?
-6. Run tests not from IDE
-7. Test reports? Allure?
-8. @step annotation?
-9. public abstract class BasePage ?
-10. Cannot find css. Example a[href="//ford.com/help/privacy"]
-11. Filters test? Case 22?
+6. Filters
+   1. Tests do not cover TC24-26 from Excel
+7. Run tests not from IDE
+8. Test reports? Allure?
+9. @step annotation?
+10. public abstract class BasePage ?
+11. Cannot find css. Example a[href="//ford.com/help/privacy"]
+12. 
