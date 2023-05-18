@@ -19,3 +19,20 @@
 ```
 allure serve path_to_allure_results_folder/allure-results
 ```
+Questions:
+1. Header
+   1. testFindDealerSectionExists fail
+2. Footer
+   1. Only testCaPrivacyExists pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
+3. CommercialVehicleCenterByStates
+   1. Only TC19 exist, no TC18, TC20-21
+4. ProCommercialResources
+   1. Only testOpenFordUpfits test pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
+5. SearchByDealerName
+   1. Extend test to pass "query" as parameter or have is as variable?
+6. Run tests not from IDE
+7. Test reports? Allure?
+8. @step annotation?
+9. public abstract class BasePage ?
+10. Cannot find css. Example a[href="//ford.com/help/privacy"]
+11. Filters test? Case 22?
