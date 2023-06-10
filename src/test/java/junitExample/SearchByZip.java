@@ -27,7 +27,7 @@ public class SearchByZip extends JUnit5Runner{
         MainPage mainPage = new MainPage();
         String query = "18018";
         mainPage.inputZipCode(query);
-        TimeUnit.SECONDS.sleep(15);
+        TimeUnit.SECONDS.sleep(5);
         assertTrue(mainPage.checkNearestDilers());
     }
 }

@@ -25,6 +25,9 @@ public class MainPage extends BasePage {
     @FindBy(css = "#find-a-dealer")
     private WebElement findDealerSection;
 
+    @FindBy(id = "find-a-dealer")
+    private WebElement findDealerSectionXpath;
+
     @FindBy(css = "a[href=\"/#why-commercial-center\"]")
     private WebElement findCommercialVehicleCenterLink;
 
@@ -66,6 +69,9 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a[href=\"//ford.com/help/privacy\"]")
     private WebElement privacyLink;
+
+    @FindBy(xpath = "//a[contains(@class, 'fmc-text-button')]/span[text()='Privacy']")
+    private WebElement privacyLinkXpath;
 
     @FindBy(css = ".fmc-text-button.optanon-toggle-display")
     private WebElement cookieSettingsLink;
@@ -113,7 +119,8 @@ public class MainPage extends BasePage {
 
     @Step("Scroll to Find a Dealer section")
     public boolean isFindDealerSectionDisplayed() {
-        return isElementVisibleOnScreen(findDealerSection);
+        //return isElementVisibleOnScreen(findDealerSectionXpath); return False
+        return findDealerSectionXpath.isDisplayed();
     }
 
     @Step("Click on \"Find Commercial Vehicle Center\" menu link")
@@ -205,9 +212,11 @@ public class MainPage extends BasePage {
 
     @Step("Privacy link")
     public void clickPrivacyLink() {
-        Waiters.waitUntilElementIsVisible(privacyLink);
-        ((JavascriptExecutor) DriverProvider.INSTANCE.getDriver()).executeScript("arguments[0].scrollIntoView();", privacyLink);
-        privacyLink.click();
+        //Waiters.waitUntilElementIsVisible(privacyLink);
+        Waiters.waitUntilElementIsVisible(privacyLinkXpath);
+        ((JavascriptExecutor) DriverProvider.INSTANCE.getDriver()).executeScript("arguments[0].scrollIntoView();", privacyLinkXpath);
+        //privacyLink.click();
+        privacyLinkXpath.click();
     }
 
     @Step("Cookie Settings link")

@@ -23,11 +23,11 @@ public class SearchByDealerName extends JUnit5Runner{
     2. Scroll to Search by Dealer Name section
     3. Put keywork "Ford" in search and hit "enter"
      */
-    public void testSearchListOfDilers() throws InterruptedException {
+    public void testSearchListOfDealers() throws InterruptedException {
         MainPage mainPage = new MainPage();
         String query = "ford";
         mainPage.searchInput(query);
-        TimeUnit.SECONDS.sleep(15);
+        TimeUnit.SECONDS.sleep(5);
         assertTrue(mainPage.isCheckSearch(query));
     }
 }

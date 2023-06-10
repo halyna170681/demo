@@ -1,13 +1,7 @@
 package junitExample;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.DriverFactory;
-import pages.DriverProvider;
 import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
@@ -67,7 +61,7 @@ public class Header extends JUnit5Runner {
     2. Click on "Why Commercial Vehicle Center" menu link
     3. Scroll to Why Commercial Vehicle Center section
      */
-    public static void tesCommercialVehicleCenter() throws InterruptedException {
+    public void testCommercialVehicleCenter() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.isFindCommercialVehicleCenterLink();
         TimeUnit.SECONDS.sleep(1);
