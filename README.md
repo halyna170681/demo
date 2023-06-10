@@ -26,16 +26,16 @@ Questions:
 3. Footer
    1. Only testCaPrivacyExists pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
 4. CommercialVehicleCenterByStates
-   1. Only TC19 exist, no TC18, TC20-21
+   1. Only TC19 exist, no TC18, TC20-21 {NOTE TC21 is not important at all}
 5. ProCommercialResources
    1. Only testOpenFordUpfits test pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
 6. SearchByDealerName
-   1. Extend test to pass "query" as parameter or have is as variable?
+   1. Extend test to pass "query" as parameter or have is as variable? {as for Demo enough}
 7. Filters
    1. Tests do not cover TC24-26 from Excel
-8. Run tests not from IDE
-9. Test reports? Allure?
-10. @step annotation?
+8. Run tests not from IDE {Jenkins}
+9. Test reports? Allure? {Jenkins}
+10. @step annotation? //@step is minimal action, main is reusability
 11. public abstract class BasePage ?
-12. Cannot find css. Example a[href="//ford.com/help/privacy"]
+12. Cannot find css. Example: a[href="//ford.com/help/privacy"]
 13. 

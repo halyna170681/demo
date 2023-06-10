@@ -4,12 +4,9 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import utils.Waiters;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 import static pages.PageHelpers.extractNumber;
 import static utils.Constants.BASE_URL;
@@ -26,7 +23,7 @@ public class MainPage extends BasePage {
     private WebElement findDealerSection;
 
     @FindBy(id = "find-a-dealer")
-    private WebElement findDealerSectionXpath;
+    private WebElement findDealerSectionId;
 
     @FindBy(css = "a[href=\"/#why-commercial-center\"]")
     private WebElement findCommercialVehicleCenterLink;
@@ -67,7 +64,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "a[href=\"//ford.com/help/contact/#accessibility\"]")
     private WebElement accessibilityLink;
 
-    @FindBy(css = "a[href=\"//ford.com/help/privacy\"]")
+    @FindBy(css = "a[href=\"//ford.com/help/privacy/\"]")
     private WebElement privacyLink;
 
     @FindBy(xpath = "//a[contains(@class, 'fmc-text-button')]/span[text()='Privacy']")
@@ -78,6 +75,9 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "[role=dialog] #ot-pc-title")
     private WebElement cookieSettingElement;
+
+    @FindBy(id = "ot-pc-title")
+    private WebElement cookieSettingElementId;
 
     @FindBy(css = "a[href=\"//ford.com/help/privacy/#caPrivacy\"]")
     private WebElement caPrivacyLink;
@@ -120,7 +120,7 @@ public class MainPage extends BasePage {
     @Step("Scroll to Find a Dealer section")
     public boolean isFindDealerSectionDisplayed() {
         //return isElementVisibleOnScreen(findDealerSectionXpath); return False
-        return findDealerSectionXpath.isDisplayed();
+        return findDealerSectionId.isDisplayed();
     }
 
     @Step("Click on \"Find Commercial Vehicle Center\" menu link")

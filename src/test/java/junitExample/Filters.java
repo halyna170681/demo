@@ -20,7 +20,7 @@ public class Filters extends JUnit5Runner{
     1. Navigate to https://fordcommercialvehiclecenter.com/
     2. Scroll to Search by Zip section
     3. Put zip code "90210" in search and hit "enter"
-    4. Expand Filters for Vechicles
+    4. Expand Filters for Vehicles
     5. Choose "F-150 Pickup" checkbox
     6. Click "Apply Filters" button
      */
