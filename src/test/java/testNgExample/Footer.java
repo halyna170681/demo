@@ -1,6 +1,7 @@
-package junitExample;
+package testNgExample;
 
 import io.qameta.allure.*;
+import junitExample.JUnit5Runner;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
@@ -11,7 +12,7 @@ import static junitExample.TestHelpers.getUrlInNewTab;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class Footer extends JUnit5Runner{
+public class Footer extends TestNgRunner {
     @Story("Check Ford Pro CVC logo in Footer")
     @Epic("Epic 5")
     @Feature("Feature 1")
@@ -25,7 +26,7 @@ public class Footer extends JUnit5Runner{
     2. Scroll  to the bottom of the page
     3. Check Ford Pro CVC logo
      */
-    public void testLogoFooterDisplayed() throws InterruptedException, MalformedURLException {
+    public void testLogoFooterDisplayed() throws InterruptedException {
         MainPage mainPage = new MainPage();
         TimeUnit.SECONDS.sleep(1);
         assertTrue(mainPage.isLogoFooterDisplayed());
@@ -43,10 +44,15 @@ public class Footer extends JUnit5Runner{
     2. Click on Do Not Sell My Personal Information ink
     3. Check Your privacy choice is exists
      */
-    public void testYourPrivacyChoicesExists() throws InterruptedException, MalformedURLException {
+    public void testYourPrivacyChoicesExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickDoNotSellMyPersonalInformationLink();
-        String url = getUrlInNewTab();
+        String url = null;
+        try {
+            url = getUrlInNewTab();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         assertEquals( "https://www.ford.com/help/privacy/ccpa/?ccpatype=donotsellmypi&referringApplicationId=23821", url);
     }
     @Story("Privacy Statement Categories and Questions page exists")
@@ -62,10 +68,15 @@ public class Footer extends JUnit5Runner{
     2. Click on Privacy Statement link
     3. Check Privacy Statement Categories and Questions page exists
      */
-    public void testPrivacyStatementCategoriesExists() throws InterruptedException, MalformedURLException{
+    public void testPrivacyStatementCategoriesExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickStatementCategoriesLink();
-        String url = getUrlInNewTab();
+        String url = null;
+        try {
+            url = getUrlInNewTab();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         assertEquals( "https://fordcommercialvehiclecenter.com/terms.pdf", url);
     }
 
@@ -82,10 +93,15 @@ public class Footer extends JUnit5Runner{
     2. Click on Accessibility link
     3. Check About Accessibility page exists
      */
-    public void testAboutAccessibilityExists() throws InterruptedException, MalformedURLException {
+    public void testAboutAccessibilityExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickAccessibilityLink();
-        String url = getUrlInNewTab();
+        String url = null;
+        try {
+            url = getUrlInNewTab();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         assertEquals( "https://www.ford.com/help/contact/#accessibility", url);
     }
 
@@ -102,10 +118,15 @@ public class Footer extends JUnit5Runner{
     2. Click on Privacy link
     3. Check Your privacy choice is exists
      */
-    public void testPrivacyPageExists() throws InterruptedException, MalformedURLException {
+    public void testPrivacyPageExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickPrivacyLink();
-        String url = getUrlInNewTab();
+        String url = null;
+        try {
+            url = getUrlInNewTab();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         assertEquals( "https://www.ford.com/help/privacy/", url);
     }
 
@@ -122,10 +143,15 @@ public class Footer extends JUnit5Runner{
     2. Click on Your CA Privacy Rights link
     3. Check CA Privacy Rights page is exists
      */
-    public void testCaPrivacyExists() throws InterruptedException, MalformedURLException {
+    public void testCaPrivacyExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickCAPrivacyLink();
-        String url = getUrlInNewTab();
+        String url = null;
+        try {
+            url = getUrlInNewTab();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         assertEquals( "https://www.ford.com/help/privacy/#caPrivacy", url);
     }
 
@@ -142,7 +168,7 @@ public class Footer extends JUnit5Runner{
     2. Click on Cookies Settings link
     3. Check Cookie Settings Modal exists
      */
-    public void testCookieSettingsModalExists() throws InterruptedException, MalformedURLException {
+    public void testCookieSettingsModalExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickCookieSettingsLink();
         assertTrue(mainPage.isCookieModalOpened());

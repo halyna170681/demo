@@ -1,6 +1,7 @@
-package junitExample;
+package testNgExample;
 
 import io.qameta.allure.*;
+import junitExample.JUnit5Runner;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
@@ -10,7 +11,7 @@ import static junitExample.TestHelpers.getUrlInNewTab;
 import static org.testng.AssertJUnit.assertEquals;
 
 
-public class ProCommercialResources extends JUnit5Runner{
+public class ProCommercialResources extends TestNgRunner {
     @Story("Check to open https://www.fordupfits.com/commercial in new tab")
     @Epic("Epic 4")
     @Feature("Feature 1")

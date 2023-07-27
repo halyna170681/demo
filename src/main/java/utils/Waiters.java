@@ -5,12 +5,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DriverProvider;
 
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 
 public class Waiters {
 
-    public static WebElement waitUntilElementIsVisible(WebElement element){
+    public static WebElement waitUntilElementIsVisible(WebElement element) {
         return new WebDriverWait(DriverProvider.INSTANCE.getDriver(), Duration.ofSeconds(1)).until(ExpectedConditions.visibilityOf(element));
     }
 }

@@ -20,9 +20,9 @@
 allure serve path_to_allure_results_folder/allure-results
 ```
 Questions:
-1. Debug -> TestEngine with ID 'junit-jupiter' failed to discover tests****
+1. Debug -> TestEngine with ID 'junit-jupiter' failed to discover tests**** - +
 2. Header
-   1. testFindDealerSectionExists fail (isElementVisibleOnScreen return false)
+   1. testFindDealerSectionExists fail (isElementVisibleOnScreen return false)  -  + browser isn't quit
 3. Footer
    1. Only testCaPrivacyExists pass, rest fail (not closing new tab and not switching back to main window? Fixed in TestHelpers)
 4. CommercialVehicleCenterByStates

@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,15 +14,20 @@ import java.util.Properties;
 import static utils.Constants.*;
 
 public class DriverProvider {
+
     public static final DriverProvider INSTANCE = new DriverProvider();
     private ThreadLocal<WebDriver> DRIVER = new ThreadLocal<WebDriver>();
 
     private DriverProvider(){}
 
-    public WebDriver getDriver(){
+    public WebDriver getDriver() {
         if (DRIVER.get() == null) {
             String browserType = loadProperties().getProperty("browserType");
-            DRIVER.set(DriverFactory.createInstance(BrowserType.valueOf(browserType)));
+            try {
+                DRIVER.set(DriverFactory.createInstance(BrowserType.valueOf(browserType)));
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
         }
         return DRIVER.get();
     }

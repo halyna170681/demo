@@ -8,6 +8,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import pages.DriverProvider;
 
+import java.net.MalformedURLException;
+
 public class TestResultLoggerExtension implements TestWatcher, AfterAllCallback {
 
     public void afterAll(ExtensionContext extensionContext) {
@@ -16,13 +18,17 @@ public class TestResultLoggerExtension implements TestWatcher, AfterAllCallback 
     }
 
     @Override
-    public void testFailed(ExtensionContext context, Throwable cause) {
+    public void testFailed(ExtensionContext context, Throwable cause){
         System.out.println("Test is failed");
-        makeScreenshot();
+        try {
+            makeScreenshot();
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Attachment(value = "Page screenshot", type = "image/png")
-    private byte[] makeScreenshot() {
+    private byte[] makeScreenshot() throws MalformedURLException {
         return ((TakesScreenshot) DriverProvider.INSTANCE.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
 }

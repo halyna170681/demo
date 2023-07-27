@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class DealerStates extends BasePage {
     private WebElement stateList;
 
 
-    public DealerStates() {
+    public DealerStates() throws MalformedURLException {
         super();
         WebDriver driver = DriverProvider.INSTANCE.getDriver();
         driver.get(DEALER_URL);

@@ -1,14 +1,12 @@
-package junitExample;
+package testNgExample;
 
 //import com.sun.java.swing.plaf.windows.resources.windows;
 import org.openqa.selenium.WebDriver;
 import pages.DriverProvider;
 
-import java.net.MalformedURLException;
-
 
 public class TestHelpers {
-    public static String getUrlInNewTab () throws MalformedURLException {
+    public static String getUrlInNewTab () {
         WebDriver driver = DriverProvider.INSTANCE.getDriver();
         String winHandleBefore = driver.getWindowHandle();
         for (String tab : driver.getWindowHandles()){

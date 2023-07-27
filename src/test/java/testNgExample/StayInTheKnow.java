@@ -1,6 +1,7 @@
-package junitExample;
+package testNgExample;
 
 import io.qameta.allure.*;
+import junitExample.JUnit5Runner;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
@@ -8,9 +9,8 @@ import java.net.MalformedURLException;
 
 import static junitExample.TestHelpers.getUrlInNewTab;
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
-public class StayInTheKnow extends JUnit5Runner{
+public class StayInTheKnow extends TestNgRunner {
     @Story("Check open new tab the Ford Pro")
     @Epic("Epic 3")
     @Feature("Feature 1")
