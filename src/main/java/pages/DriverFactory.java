@@ -86,7 +86,7 @@ public class DriverFactory {
                 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
                 options.addArguments("--no-sandbox"); // Bypass OS security model
                 options.addArguments("--headless=new");
-                driver = new RemoteWebDriver(new URL("http://34.29.214.131:4444/wd/hub"), options);
+                driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
                 /*if("remote".equalsIgnoreCase(browser)) {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     capabilities.setCapability("browserName", "chrome");

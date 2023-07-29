@@ -3,6 +3,8 @@ package testNgExample;
 import io.qameta.allure.*;
 import junitExample.JUnit5Runner;
 import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
