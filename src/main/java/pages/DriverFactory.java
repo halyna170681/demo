@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.How;
 
 
 import java.io.File;
@@ -25,56 +26,32 @@ public class DriverFactory {
         switch (browserType) {
             case CHROME:
                 //System.setProperty(SYSTEM_PROPERTY_CHROME_DRIVER, PATH_TO_CHROME_DRIVER);
-                //WebDriverManager.chromedriver().setup();
-                //ChromeOptions options = new ChromeOptions();
-                //options.addArguments("--remote-allow-origins=*");
-                //driver = new ChromeDriver(options);
-                /*DesiredCapabilities capabilities = new DesiredCapabilities();
-                capabilities.setCapability("browserName", "Chrome");
-                capabilities.setCapability("browserVersion", "107.0");
-                capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
-                    *//* How to add test badge *//*
-                    put("name", "Test badge...");
-
-                    *//* How to set session timeout *//*
-                    put("sessionTimeout", "15m");
-
-                    *//* How to set timezone *//*
-                    put("env", new ArrayList<String>() {{
-                        add("TZ=UTC");
-                    }});
-
-                    *//* How to add "trash" button *//*
-                    put("labels", new HashMap<String, Object>() {{
-                        put("manual", "true");
-                    }});
-
-                    *//* How to enable video recording *//*
-                    put("enableVideo", false);
-                }});
-                driver = new RemoteWebDriver(new URL("http://172.16.107.128:4444/wd/hub"), capabilities);*/
+                /*WebDriverManager.chromedriver().setup();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(options);*/
 
                 ChromeOptions options = new ChromeOptions();
-                //options.setCapability("browserName", "chrome");
+                options.setCapability("browserName", "chrome");
                 options.setCapability("browserVersion", "113");
                 options.setCapability("selenoid:options", new HashMap<String, Object>() {{
-                    /* How to add test badge */
+                     /*How to add test badge*/
                     put("name", "Test badge...");
 
-                    /* How to set session timeout */
+                     /*How to set session timeout*/
                     put("sessionTimeout", "15m");
 
-                    /* How to set timezone */
+                    /*How to set timezone*/
                     put("env", new ArrayList<String>() {{
                         add("TZ=UTC");
                     }});
 
-                    /* How to add "trash" button */
+                    /*How to add "trash" button*/
                     put("labels", new HashMap<String, Object>() {{
                         put("manual", "true");
                     }});
 
-                    /* How to enable video recording */
+                    /*How to enable video recording*/
                     put("enableVideo", false);
                     put("eenableTracing", false);
                 }});
@@ -87,18 +64,6 @@ public class DriverFactory {
                 options.addArguments("--no-sandbox"); // Bypass OS security model
                 options.addArguments("--headless=new");
                 driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
-                /*if("remote".equalsIgnoreCase(browser)) {
-                    DesiredCapabilities capabilities = new DesiredCapabilities();
-                    capabilities.setCapability("browserName", "chrome");
-                    driver = new RemoteWebDriver(URI.create("http://localhost:3100/").toURL(), capabilities);
-                }else{
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions options = new ChromeOptions();
-                    Map<String, Object> prefs = new HashMap<>();
-                    prefs.put("download.default.directory", new File("target/download").getAbsolutePath());
-                    options.setExperimentalOption("prefs", prefs);
-                    driver = new ChromeDriver(options);
-               }*/
                 break;
             case FIREFOX:
                 driver = new FirefoxDriver();

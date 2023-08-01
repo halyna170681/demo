@@ -29,25 +29,11 @@
             <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
-
-        <!--TestNg example-->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>2.13.9</version>
-        </dependency>
-
         <!--JUnit 5 example-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>2.13.9</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>2.13.9</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.konloch</groupId>
@@ -79,24 +65,15 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
             <version>5.3.2</version>
         </dependency>
         <!--end of dependencies for JUNit5 -->
+        <!-- Report -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-testng-adapter</artifactId>
+            <version>1.0.7</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
