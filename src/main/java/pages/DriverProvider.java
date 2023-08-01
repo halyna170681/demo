@@ -16,11 +16,11 @@ import static utils.Constants.*;
 public class DriverProvider {
 
     public static final DriverProvider INSTANCE = new DriverProvider();
-    private ThreadLocal<WebDriver> DRIVER = new ThreadLocal<WebDriver>();
+    private static ThreadLocal<WebDriver> DRIVER = new ThreadLocal<WebDriver>();
 
     private DriverProvider(){}
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         if (DRIVER.get() == null) {
             String browserType = loadProperties().getProperty("browserType");
             try {
