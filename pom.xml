@@ -83,10 +83,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
                 <configuration>
-                    <systemPropertyVariables>
-                        <url>http://site.dev</url>
-                        <browser>$(browser)</browser>
-                    </systemPropertyVariables>
+<!--                    <systemPropertyVariables>-->
+<!--                        <url>http://site.dev</url>-->
+<!--                        <browser>$(browser)</browser>-->
+<!--                    </systemPropertyVariables>-->
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/Header.xml</suiteXmlFile>
                     </suiteXmlFiles>
