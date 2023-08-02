@@ -29,12 +29,12 @@
             <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
-       <!-- &lt;!&ndash;JUnit 5 example&ndash;&gt;
+        <!--JUnit 5 example-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>2.13.9</version>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>com.konloch</groupId>
             <artifactId>Constants</artifactId>
@@ -88,7 +88,7 @@
                         <browser>$(browser)</browser>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/Header.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/Remote.xml</suiteXmlFile>
                     </suiteXmlFiles>
                    <!-- <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
