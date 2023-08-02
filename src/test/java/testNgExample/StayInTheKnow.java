@@ -16,7 +16,7 @@ public class StayInTheKnow extends TestNgRunner {
     @Feature("Feature 1")
     @Link("Link")
     @Issue("link on issue")
-    @Description("Description")
+    @Description("testCheckOpenNewTabFordPro")
     @Test
     /*
     Case 6:

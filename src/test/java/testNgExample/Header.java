@@ -9,6 +9,7 @@ import pages.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.bouncycastle.asn1.x500.style.RFC4519Style.description;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class Header extends TestNgRunner {

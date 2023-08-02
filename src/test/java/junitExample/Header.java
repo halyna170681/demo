@@ -1,6 +1,7 @@
 package junitExample;
 
 import io.qameta.allure.*;
+import net.bytebuddy.build.Plugin;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
@@ -9,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class Header extends JUnit5Runner {
-    @Story("All required elements are displayed")
+    @Story("Find a Dealer section exists")
     @Epic("Epic 1")
-    @Feature("Feature 1")
+    @Feature("Feature 2")
     @Link("Link")
     @Issue("link on issue")
     @Description("Description")
@@ -53,7 +54,7 @@ public class Header extends JUnit5Runner {
     @Feature("Feature 3")
     @Link("Link")
     @Issue("link on issue")
-    @Description("Description")
+    @Description("testCommercialVehicleCenter")
     @Test
     /*
     Case 3:
