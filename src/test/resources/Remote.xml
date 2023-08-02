@@ -1,9 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name = "Regression Suite">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+        <!--OR-->
+        <!--<listener class-name="org.testng.reporters.XMLReporter"/>-->
+    </listeners>
         <test name = "remote test">
             <classes>
                 <class name = "testNgExample.Header"></class>
+                <class name="testNgExample.ContactTheFordPro"> </class>
+                <class name="testNgExample.StayInTheKnow"> </class>
+                <class name="testNgExample.ProCommercialResources"> </class>
+                <class name = "testNgExample.Footer"></class>
+                <class name="testNgExample.CommercialVehicleCenterByStates"> </class>
+                <class name="testNgExample.SearchByDealerName"> </class>
+                <class name="testNgExample.SearchByZip"> </class>
+                <class name="testNgExample.Filters"> </class>
             </classes>
         </test>
 </suite>

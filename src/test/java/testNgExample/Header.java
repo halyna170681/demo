@@ -1,62 +1,43 @@
 package testNgExample;
 
-import io.qameta.allure.*;
-import junitExample.JUnit5Runner;
-import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.MainPage;
-
 import java.util.concurrent.TimeUnit;
 
-import static org.bouncycastle.asn1.x500.style.RFC4519Style.description;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class Header extends TestNgRunner {
-    @Story("All required elements are displayed")
-    @Epic("Epic 1")
-    @Feature("Feature 1")
-    @Link("Link")
-    @Issue("link on issue")
-    @Description("Description")
-    @Test
+
     /*
     Case 1:
     1. Navigate to https://fordcommercialvehiclecenter.com/
     2. Check Ford Pro CVC logo
      */
+
+    @Test(description = "testFordProLogoExists", priority = 0)
     public void testFordProLogoExists() {
         MainPage mainPage = new MainPage();
-        assertTrue(mainPage.isLogoDisplayed());
+        Assert.assertTrue(mainPage.isLogoDisplayed());
     }
-    @Story("Find a Dealer section exists")
-    @Epic("Epic 1")
-    @Feature("Feature 2")
-    @Link("Link")
-    @Issue("link on issue")
-    @Description("Description")
-    @Test
+
+
     /*
     Case 2:
     1. Navigate to https://fordcommercialvehiclecenter.com/
     2. Click on "Find a Dealer" menu link
     3. Scroll to Find a Dealer section
      */
+    @Test(description = "testFindDealerSectionExists", priority = 1)
     public void testFindDealerSectionExists() throws InterruptedException {
         MainPage mainPage = new MainPage();
         mainPage.clickFindDealerLink();
         TimeUnit.SECONDS.sleep(1);
-        assertTrue(mainPage.isFindDealerSectionDisplayed());
+        Assert.assertTrue(mainPage.isFindDealerSectionDisplayed());
     }
 
 
-    @Story("Why Commercial Vehicle Center section exists")
-    @Epic("Epic 1")
-    @Feature("Feature 3")
-    @Link("Link")
-    @Issue("link on issue")
-    @Description("Description")
-    @Test
+
+    @Test(description = "testCommercialVehicleCenter", priority = 2)
     /*
     Case 3:
     1. Navigate to https://fordcommercialvehiclecenter.com/
@@ -67,7 +48,7 @@ public class Header extends TestNgRunner {
         MainPage mainPage = new MainPage();
         mainPage.isFindCommercialVehicleCenterLink();
         TimeUnit.SECONDS.sleep(1);
-        assertTrue(mainPage.isFindCommercialVehicleCenterSection());
+        Assert.assertTrue(mainPage.isFindCommercialVehicleCenterSection());
     }
 }
 

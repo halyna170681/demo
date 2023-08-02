@@ -1,6 +1,5 @@
 package testNgExample;
 
-//import com.sun.java.swing.plaf.windows.resources.windows;
 import org.openqa.selenium.WebDriver;
 import pages.DriverProvider;
 

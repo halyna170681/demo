@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1" verbose="1" >
+<suite name="Suite8" verbose="1" >
     <listeners>
         <listener class-name="org.testng.reporters.EmailableReporter"/>
-         <!--<listener class-name="org.testng.reporters.XMLReporter"/>-->
+        <!--<listener class-name="org.testng.reporters.XMLReporter"/>-->
     </listeners>
     <test name="Header" >
         <classes>
-            <class name="testNgExample.Header"> </class>
+            <class name="testNgExample.SearchByZip"> </class>
         </classes>
     </test>
 </suite>

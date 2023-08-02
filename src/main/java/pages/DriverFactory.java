@@ -1,22 +1,15 @@
 package pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.How;
 
-
-import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class DriverFactory {
@@ -25,7 +18,6 @@ public class DriverFactory {
         WebDriver driver;
         switch (browserType) {
             case CHROME:
-                //System.setProperty(SYSTEM_PROPERTY_CHROME_DRIVER, PATH_TO_CHROME_DRIVER);
                 /*WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--remote-allow-origins=*");
@@ -35,23 +27,14 @@ public class DriverFactory {
                 options.setCapability("browserName", "chrome");
                 options.setCapability("browserVersion", "113");
                 options.setCapability("selenoid:options", new HashMap<String, Object>() {{
-                     /*How to add test badge*/
                     put("name", "Test badge...");
-
-                     /*How to set session timeout*/
                     put("sessionTimeout", "15m");
-
-                    /*How to set timezone*/
                     put("env", new ArrayList<String>() {{
                         add("TZ=UTC");
                     }});
-
-                    /*How to add "trash" button*/
                     put("labels", new HashMap<String, Object>() {{
                         put("manual", "true");
                     }});
-
-                    /*How to enable video recording*/
                     put("enableVideo", false);
                     put("eenableTracing", false);
                 }});

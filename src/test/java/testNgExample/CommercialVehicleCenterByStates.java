@@ -1,31 +1,21 @@
 package testNgExample;
 
-import io.qameta.allure.*;
-import junitExample.JUnit5Runner;
-import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.DealerStates;
 import pages.MainPage;
 
 import java.net.MalformedURLException;
 
-import static org.testng.AssertJUnit.assertTrue;
 
 public class CommercialVehicleCenterByStates extends TestNgRunner {
-    @Story("Open \"Ford Pro Commercial Vehicle Centers by state\" list")
-    @Epic("Epic 6")
-    @Feature("Feature 1")
-    @Link("Link")
-    @Issue("link on issue")
-    @Description("Description")
-    @Test
     /*
     Case 19:
     1. Navigate to https://fordcommercialvehiclecenter.com/
     2. Scroll to "See a list of all Commercial Vehicle Centers by state" link
     3. Click on "See a list of all Commercial Vehicle Centers by state" link
      */
+    @Test(description = "testCommercialVehicleCentersList", priority = 18)
     public void testCommercialVehicleCentersList() {
         MainPage mainPage = new MainPage();
         mainPage.listCommercialVehicleLink();
@@ -46,6 +36,6 @@ public class CommercialVehicleCenterByStates extends TestNgRunner {
                 "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina",
                 "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia",
                 "Washington", "West Virginia", "Wisconsin", "Wyoming"};
-        assertTrue(dealerStates.isLStateListContains(expectedData));
+        Assert.assertTrue(dealerStates.isLStateListContains(expectedData));
     }
 }

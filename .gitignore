@@ -6,10 +6,11 @@
 ## Directory-based project format:
 .idea/
 
-## Allure results
-/allure-results/
+## TestNg report
+/test-output/
 
 ## Target folder
 /target/
+
 
 
