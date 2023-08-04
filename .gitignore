@@ -7,6 +7,8 @@
 .idea/
 
 ## TestNg report
+/test-output/
+/allure-results/
 
 
 ## Target folder

@@ -8,7 +8,7 @@
     </listeners>
         <test name = "remote test">
             <classes>
-                <class name = "testNgExample.Header"></class>
+                <class name="testNgExample.Header"></class>
                 <class name="testNgExample.ContactTheFordPro"> </class>
                 <class name="testNgExample.StayInTheKnow"> </class>
                 <class name="testNgExample.ProCommercialResources"> </class>

@@ -1,7 +1,9 @@
 package pages;
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,6 +17,7 @@ import java.util.HashMap;
 public class DriverFactory {
 
     public static WebDriver createInstance(BrowserType browserType) throws MalformedURLException {
+
         WebDriver driver;
         switch (browserType) {
             case CHROME:

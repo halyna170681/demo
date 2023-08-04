@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.version>17</aspectj.version>
     </properties>
 
     <dependencies>
@@ -28,12 +28,6 @@
             <artifactId>testng</artifactId>
             <version>7.7.1</version>
             <scope>test</scope>
-        </dependency>
-        <!--JUnit 5 example-->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>2.13.9</version>
         </dependency>
         <dependency>
             <groupId>com.konloch</groupId>
@@ -74,6 +68,16 @@
             <artifactId>extentreports-testng-adapter</artifactId>
             <version>1.0.7</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.18.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -110,35 +114,6 @@
                     <target>17</target>
                 </configuration>
             </plugin>
-            <!-- UNCOMMENT FOR JUNIT example-->
-            <!--<plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-                <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                    <systemProperties>
-                        <property>
-                            <name>junit.jupiter.extensions.autodetection.enabled</name>
-                            <value>true</value>
-                        </property>
-                    </systemProperties>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>1.2.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>-->
         </plugins>
     </build>
 </project>
