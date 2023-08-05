@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <aspectj.version>11</aspectj.version>
+        <aspectj.version>17</aspectj.version>
     </properties>
 
     <dependencies>

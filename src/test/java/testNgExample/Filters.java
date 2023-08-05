@@ -6,6 +6,7 @@ import pages.MainPage;
 import static testNgExample.TestHelpers.getUrlInNewTab;
 
 
+
 public class Filters extends TestNgRunner {
     /*
     Case 22:
