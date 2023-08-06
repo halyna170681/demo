@@ -4,6 +4,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Waiters;
 
 import java.util.List;
@@ -113,13 +115,14 @@ public class MainPage extends BasePage {
 
     @Step("Click on \"Find a Dealer\" menu link")
     public void clickFindDealerLink() {
+
         Waiters.waitUntilElementIsVisible(findDealerLink);
         findDealerLink.click();
     }
 
     @Step("Scroll to Find a Dealer section")
     public boolean isFindDealerSectionDisplayed() {
-        //return isElementVisibleOnScreen(findDealerSectionXpath); return False
+        Waiters.waitUntilElementIsVisible(findDealerSectionId);
         return findDealerSectionId.isDisplayed();
     }
 
