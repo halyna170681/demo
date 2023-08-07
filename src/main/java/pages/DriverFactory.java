@@ -22,12 +22,12 @@ public class DriverFactory {
         Boolean isRemote = true;
         switch (browserType) {
             case CHROME:
-                if (isRemote == false) {
+               /* if (isRemote == false) {
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);
-                }else {
+                }else {*/
                     ChromeOptions options = new ChromeOptions();
                     options.setCapability("browserName", "chrome");
                     options.setCapability("browserVersion", "113.0");
@@ -47,7 +47,7 @@ public class DriverFactory {
                         }
                     });
                     driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
-                }
+                //}
                 break;
             case FIREFOX:
                 driver = new FirefoxDriver();
