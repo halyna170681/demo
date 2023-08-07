@@ -19,39 +19,35 @@ public class DriverFactory {
     public static WebDriver createInstance(BrowserType browserType) throws MalformedURLException {
 
         WebDriver driver;
+        Boolean isRemote = true;
         switch (browserType) {
             case CHROME:
-               /* WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--remote-allow-origins=*");
-                driver = new ChromeDriver(options);*/
-
-                ChromeOptions options = new ChromeOptions();
-                options.setCapability("browserName", "chrome");
-                options.setCapability("browserVersion", "113.0");
-                options.setCapability("selenoid:options", new HashMap<String, Object>() {
-                    {
-                        put("enableVNC", true);
-                    put("name", "Test badge...");
-                    put("sessionTimeout", "15m");
-                    put("env", new ArrayList<String>() {{
-                        add("TZ=UTC");
-                    }});
-                    put("labels", new HashMap<String, Object>() {{
-                        put("manual", "true");
-                    }});
-                    put("enableVideo", false);
-                    put("eenableTracing", true);
-                }});
-                /*options.addArguments("--remote-allow-origins=*");
-                options.addArguments("start-maximized"); // open Browser in maximized mode
-                options.addArguments("disable-infobars"); // disabling infobars
-                options.addArguments("--disable-extensions"); // disabling extensions
-                options.addArguments("--disable-gpu"); // applicable to windows os only
-                options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-                options.addArguments("--no-sandbox"); // Bypass OS security model
-                options.addArguments("--headless=new");*/
-                driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
+                if (isRemote == false) {
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    driver = new ChromeDriver(options);
+                }else {
+                    ChromeOptions options = new ChromeOptions();
+                    options.setCapability("browserName", "chrome");
+                    options.setCapability("browserVersion", "113.0");
+                    options.setCapability("selenoid:options", new HashMap<String, Object>() {
+                        {
+                            put("enableVNC", true);
+                            put("name", "Test badge...");
+                            put("sessionTimeout", "15m");
+                            put("env", new ArrayList<String>() {{
+                                add("TZ=UTC");
+                            }});
+                            put("labels", new HashMap<String, Object>() {{
+                                put("manual", "true");
+                            }});
+                            put("enableVideo", false);
+                            put("eenableTracing", true);
+                        }
+                    });
+                    driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
+                }
                 break;
             case FIREFOX:
                 driver = new FirefoxDriver();

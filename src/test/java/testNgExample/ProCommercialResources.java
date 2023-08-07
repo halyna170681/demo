@@ -3,6 +3,9 @@ package testNgExample;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
+
+import java.util.concurrent.TimeUnit;
+
 import static testNgExample.TestHelpers.getUrlInNewTab;
 
 
@@ -19,6 +22,7 @@ public class ProCommercialResources extends TestNgRunner {
     public void testOpenFordUpfits() throws InterruptedException {
 
         MainPage mainPage = new MainPage();
+        TimeUnit.SECONDS.sleep(1);
         mainPage.clickFordUpfitsLink();
         String url = null;
         url = getUrlInNewTab();
@@ -35,6 +39,7 @@ public class ProCommercialResources extends TestNgRunner {
     public void testFordProFinSimple() throws InterruptedException {
 
         MainPage mainPage = new MainPage();
+        TimeUnit.SECONDS.sleep(1);
         mainPage.clickFordProFinSimpleLink();
         String url = null;
         url = getUrlInNewTab();
@@ -67,6 +72,7 @@ public class ProCommercialResources extends TestNgRunner {
     public void testFordCommercialSolutionLink() throws InterruptedException {
 
         MainPage mainPage = new MainPage();
+        TimeUnit.SECONDS.sleep(1);
         mainPage.clickFordCommercialSolutionLink();
         String url = null;
         url = getUrlInNewTab();
