@@ -17,7 +17,6 @@ import java.util.HashMap;
 public class DriverFactory {
 
     public static WebDriver createInstance(BrowserType browserType) throws MalformedURLException {
-
         WebDriver driver;
         Boolean isRemote = true;
         switch (browserType) {
@@ -28,6 +27,7 @@ public class DriverFactory {
                     options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);
                 }else {
+                   System.setProperty("webdriver.http.factory", "jdk-http-client");
                     ChromeOptions options = new ChromeOptions();
                     options.setCapability("browserName", "chrome");
                     //options.setCapability("browserVersion", "113.0");
