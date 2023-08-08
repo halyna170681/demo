@@ -97,7 +97,7 @@
                         <browser>$(browser)</browser>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/Remote.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/StayInTheKnow.xml</suiteXmlFile>
                     </suiteXmlFiles>
                    <!-- <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

@@ -2,6 +2,7 @@ package pages;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -35,7 +36,7 @@ public class DriverFactory {
                         {
                             put("enableVNC", true);
                             put("name", "Test badge...");
-                            put("sessionTimeout", "1h");
+                            put("sessionTimeout", "15m");
                             put("env", new ArrayList<String>() {{
                                 add("TZ=UTC");
                             }});
@@ -46,6 +47,14 @@ public class DriverFactory {
                             put("eenableTracing", true);
                         }
                     });
+                   options.addArguments("enable-automation");
+                   options.addArguments("--headless");
+                   options.addArguments("--window-size=1920,1080");
+                   options.addArguments("--no-sandbox");
+                   options.addArguments("--disable-extensions");
+                   options.addArguments("--dns-prefetch-disable");
+                   options.addArguments("--disable-gpu");
+                   options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                     driver = new RemoteWebDriver(new URL("http://34.170.56.149:4444/wd/hub"), options);
                 }
                 break;

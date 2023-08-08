@@ -17,6 +17,7 @@ public class Filters extends TestNgRunner {
     5. Choose "F-150 Pickup" checkbox
     6. Click "Apply Filters" button
      */
+
     @Test(description = "testCommercialVehicleCentersList", priority = 21)
     public void testCommercialVehicleCentersList() throws InterruptedException {
 
