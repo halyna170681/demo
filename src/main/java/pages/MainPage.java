@@ -201,7 +201,7 @@ public class MainPage extends BasePage {
 
     @Step("Statement link")
     public void clickStatementCategoriesLink() {
-        Waiters.waitUntilElementIsVisible(termsLink);
+        //Waiters.waitUntilElementIsVisible(termsLink);
         ((JavascriptExecutor) DriverProvider.INSTANCE.getDriver()).executeScript("arguments[0].scrollIntoView();", termsLink);
         termsLink.click();
     }

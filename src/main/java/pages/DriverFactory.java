@@ -47,9 +47,8 @@ public class DriverFactory {
                             put("eenableTracing", true);
                         }
                     });
-                   options.addArguments("enable-automation");
-                   options.addArguments("--headless");
-                   options.addArguments("--window-size=1920,1080");
+                   options.addArguments("--allow-running-insecure-content");
+                   options.addArguments("--start-maximized");
                    options.addArguments("--no-sandbox");
                    options.addArguments("--disable-extensions");
                    options.addArguments("--dns-prefetch-disable");

@@ -5,7 +5,7 @@ import pages.DriverProvider;
 
 
 public class TestHelpers {
-    public static String getUrlInNewTab () {
+    public static String getUrlInNewTab () throws InterruptedException {
         WebDriver driver = DriverProvider.INSTANCE.getDriver();
         String winHandleBefore = driver.getWindowHandle();
         for (String tab : driver.getWindowHandles()){
@@ -13,6 +13,7 @@ public class TestHelpers {
         }
         String url = driver.getCurrentUrl();
         driver.close();
+        Thread.sleep(9000);
         driver.switchTo().window(winHandleBefore);
         return url;
     }
